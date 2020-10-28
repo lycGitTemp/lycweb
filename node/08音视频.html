@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音视频播放</title>
+</head>
+<body>
+    <!-- 
+        audio 标签用来向页面中引入一个外部的音频文件
+            音视频文件引入时，默认情况下不允许用户自己控制停止播放
+
+        属性：
+            controls 是否允许用户控制播放
+            autoplay 音频文件是否自动播放 如果设置了，则音乐在打开页面时会自动播放，
+                        但目前大部分浏览器不会自动播放
+            loop 音乐是否循环播放 
+     -->
+     <audio src=" " controls autoplay loop ></audio>
+
+     <!-- 除了通过src来指定外部文件的路径外，还可以通过source来指定文件 -->
+
+     <audio controls>
+         <!-- 可支持多个音频文件，但优先使用第一个，如果第一个浏览器不支持，会使用第二个。 -->
+         <source src=" "> 
+         <source src=" "> 
+
+             <!-- 可以适用于老版本浏览器来播放音频文件-->
+            <embed src="" type="audio/MP3">
+     </audio>
+
+
+     <!-- 
+         使用video标签向网页引入外部视频文件，使用方式和audio基本一样
+      -->
+    <video  controls>
+        <source src=" "> 
+        <source src=" "> 
+   
+                <!-- 可以适用于老版本浏览器来播放视频文件-->
+               <embed src="" type="video/mp4">
+    </video>
+
+</body>
+</html>

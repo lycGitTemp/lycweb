@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语义化标签</title>
+</head>
+<body>
+    
+    <!-- 
+        标题标签
+            h1~h6一共有六个标题；h1最重要，h6最不重要
+            h1重要性仅次于title标签，一般情况下一页面只有一个h1标题
+            一般情况下只有h1~h3,h4~h6很少用
+            标题标签都是块元素
+     -->
+     <h1>一级标题</h1>
+     <h2>二级标题</h2>
+     <h3>三级标题</h3>
+     <h4>四级标题</h4>
+     <h5>五级标题</h5>
+     <h6>六级标题</h6>
+
+     <!-- 
+        hgroup标签用来标签分组，可以将一组相关的标题同时放入到hgroup
+      -->
+    <hgroup>
+      <h1>回乡偶书</h1>
+      <h2>其一</h2>
+    </hgroup>
+     <!-- 
+        p标签表示页面的一个段落
+        p也是一个块元素
+      -->
+      <p>在p标签的内容表示一个段落</p>
+
+      <!-- em标签用于表示语气语调的一个加重 
+          在页面不会独占一行的元素称为行内元素<inline element>
+            strong表示强调重要内容
+      -->
+      <p>今天天气<em>真</em>不错</p>
+      <p>今天必须要<strong>完成作业</strong>！</p>
+
+      鲁迅说:
+      <!-- blockquote 表示一个长引用 -->
+      <blockquote>
+        你们抓周树人管我鲁迅什么事！
+      </blockquote>
+
+      <!-- q表示一个短引用 -->
+      子曰<q>学而时习之，不亦说乎！</q>
+
+      <!-- 
+          br表示页面中的换行
+       -->
+       <br>
+       <br>
+      今天是个好日子
+
+
+      <!-- 
+         布局标签 （结构语义化标签）
+      -->
+      <!-- 
+        header表示网页的头部
+        main表示网页主体部分（一个页面中只会有一个main）
+        footer表示网页的底部
+        nav表示网页中的导航
+        aside和主体相关的其他内容（侧边栏）
+        article表示一个独立的文章
+        section表示一个独立的区块，上边的标签都不能使用section
+
+        div没有语义，就用来表示一个区块，目前来讲div还是主要的布局元素
+        span行内元素，没有任何语义，一般用于网页中选中文字
+      -->
+      <header></header>
+      <main></main>
+      <footer></footer>
+      <nav></nav>
+      <aside></aside>
+      <article></article>
+      <section></section>
+
+      <div></div>
+      <span></span>
+</body>
+</html>
