@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            元素选择器：
+                作用：根据标签名来选中指定的元素
+                语法：标签名{}
+                例子：h1{}  p{}  div{}
+        */
+        p{
+            color: crimson;
+        }
+        h1{
+            color: cyan;
+        }
+
+
+        /*
+        如何单独选中一个标签设置样式
+
+        id选择器：
+            作用：根据元素的id属性选择一个元素
+            语法：#id属性值{}
+            例子：#box{} #name{}
+        */
+        #name{
+            color: darkmagenta;
+        }
+
+        /*
+        因为id属性最好不要重复，那么如何选着多个标签用相同的样式
+
+        class 类选择器
+            作用：根据元素的class属性值选中一组元素
+            语法：.class属性值
+        */
+        .wrapper{
+            color: gold;
+        }
+        .abc{
+            font-size: 40px;
+        }
+
+        /*
+        通配选择器
+            作用：选择页面中的所有元素
+            语法：*{}
+        */
+        
+    </style>
+</head>
+<body>
+    <h1>我是标题</h1>
+    <p>江西</p>
+    <p>软件</p>
+    <p id="name">职业</p>
+    <p>技术</p>
+    <p class="wrapper">大学</p>
+    <p class="wrapper abc">南昌</p>
+</body>
+</html>

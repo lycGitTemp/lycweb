@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS编写位置</title>
+    <!-- 
+        第二种方式（内部样式）
+            -将样式编写到head中的style标签里
+            -可以同时为多个标签设置样式，并且修改一处即可全部应用
+            -但是内部样式只能对一个网页起作用，里面的样式不能跨网页复用
+     -->
+     <!-- <style>
+         span{
+             color: blue;
+             font-size: 50px;
+         }
+     </style>
+
+      -->
+
+
+        <!-- 第三种方式（ 外部样式）
+            -可以通过CSS样式填写到一个外部的CSS文件中
+            -然后通过link标签来引入外部的CSS文件
+            -可以在不同页面中复用
+      -->
+
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <p>江西软件职业技术大学</p>
+    <!-- 
+        第一种样式（内联样式，行内样式）
+            -在标签内部通过style属性设置元素的样式
+            -但只对一个标签有效
+     -->
+    <!-- <p style="color: brown;font-size: 50px;" >江西软件职业技术大学</p> -->
+
+</body>
+</html>

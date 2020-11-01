@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /*  将class为name的元素设置为红色字体 */
+        .red{
+            color: red;
+        }
+
+        /*将class为name的div字体大小设置为30px
+            交集选择器
+                作用：选中同时满足多个条件的元素
+                语法：选择器1选择器2选择器3选择器n{}
+            交集选择器如果有元素选择器，必须使用元素选择器开头
+        
+        */
+        div.red{
+            font-size: 30px;
+        }
+
+        /* 
+        选择器分组（分组选择器）
+            作用：同时选择多个选择器
+            语法：选择器1,选择器2,选择器3,选择器n{}
+        
+        */
+        h1,span{
+            color: green;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="name">我是div</div>
+    <p class="name">我是p元素</p>
+    <h1>江西</h1>
+    <span>牛掰</span>
+</body>
+</html>
