@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: green;
+        }
+        .wrapper{
+            background-color: yellow;
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -300px;
+            margin-top: -200px;
+        }
+        #leftTab{
+            background-color:aqua;
+            width: 30%;
+            height: 90%;
+            position: absolute;
+            top: 5%; 
+        }
+        #rightTab{
+            background-color:pink;
+            width: 70%;
+            height: 90%;
+            float: right;
+            position: relative;
+            top: 5%;
+        }
+        .name{
+            background-color: gold;
+            height: 30px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #leftTab div:first-child{
+            background-color: lightgray;
+            margin-top: 50px;
+        }
+        .name a{
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .name a:active{
+            background-color:ghostwhite;
+        }
+        #rightTab div:target{
+            display: block;
+        }
+        #home{
+            background-color:fuchsia;
+            display: none;
+        }
+        #news{
+            background-color: salmon;
+            display: none;
+        }
+        #deparment{
+            background-color:skyblue;
+            display: none;
+        }
+        #teachers{
+            background-color:springgreen;
+            display: none;
+        }
+        #teaching{
+            background-color: crimson;
+            display: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="leftTab">
+            <div id="menu1" class="name"><a href="#home" class="name1">学校概况</a></div>
+            <div id="menu2" class="name"><a href="#news" class="name1">新闻中心</a></div>
+            <div id="menu3" class="name"><a href="#deparment" class="name1">机构设置</a></div>
+            <div id="menu4" class="name"><a href="#teachers" class="name1">师资队伍</a></div>
+            <div id="menu5" class="name"><a href="#teaching" class="name1">教育教学</a></div>
+        </div>
+        <div id="rightTab">
+            <div id="home">
+                <p>
+                江西软件职业技术大学是一个地处偏远的乡村大学，处于南昌和九江的交界处
+                </p>
+            </div>
+            <div id="news">
+                <P>江西大学电竞班取得全球高校英雄联盟比赛冠军</P>
+            </div>
+            <div id="deparment">
+                <p>软件分院</p>
+            </div>
+            <div id="teachers">
+                <p>高学历老师</p>
+            </div>
+            <div id="teaching">
+                <p>首创区块链学院</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
