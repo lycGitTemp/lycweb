@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS过渡</title>
+    <style>
+        #wrapper{
+            width: 50px;
+            height: 50px;
+            background-color:red;
+            border: 10px solid greenyellow;
+        }
+        #wrapper:hover{
+            width: 500px;
+            height: 300px;
+            /* 
+            里面的all可以改变位高度height和宽度width 
+            5s为匀速运行
+            3s为延迟时间运行
+            */
+            transition: all ease 5s 3s;
+
+        }
+    </style>
+    
+</head>
+<body onload="init()">
+    <div id="wrapper">
+
+        <script>
+            function init(){
+                var target=window.document.getElementById("wrapper");
+                target.style.backgroundColor="blue";
+            }
+        </script>
+
+    <!-- 
+        定义基本数据类型
+        var apple=20; 整形
+        var lemon="柠檬";  字符型
+        var banana=ture;    布尔型
+        var pear=null;      空类型
+        var orange=undefined;   未定义类型
+        
+        var peach=function peachSum(){
+
+        }
+        var watermelon={}
+        coonsole.
+    -->
+    </div>
+</body>
+</html>
