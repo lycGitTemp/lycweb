@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!--
+            可以将JS代码写到外部js文件中，然后通过script标签引入
+            写到外部文件中可以在不同的页面中同时引用，也可以利用到浏览器的缓存机制
+        -->
+
+        <!--
+            script标签一旦引用外部文件，就不能在编写代码了，即使编写也会被忽略 
+            如果需要，可以重新编写script标签
+        -->
+        <!-- <script src="./1.js">
+            alert("我是内部js标签")
+        </script> -->
+
+    <!-- 
+        JS代码可以写在SCript标签中
+    <script>
+        alert("我是scipt标签的代码")
+    </script> 
+    -->
+   
+</head>
+<body>
+    <!--
+         可以将JS代码编写到标签的onclick属性中
+        当我们点击按钮时，JS代码才会执行
+    -->
+    <!-- <button onclick="alert('你点我干嘛？')">请点击</button> -->
+
+    <!-- 
+        可以将JS代码写在超链接的href属性中，点击超链接时，执行js代码
+     -->
+     <!-- <a href="javascript:alert('让你点你就点...')">我也可以点</a>
+     <a href="javascript:;">我还可以点</a> -->
+
+</body>
+</html>

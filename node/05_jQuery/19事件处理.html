@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .div1{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 20px;
+            left: 10px;
+            background: blue;
+        }
+        .div2{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            background: red;
+        }
+        .div3{
+            position: absolute;
+            top: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">外部div
+        <div class="div2">内部div</div>
+    </div>
+    <div class="div3">
+        <button id="btn1">取消绑定所有事件</button>
+        <button id="btn2">取消绑定mouseover事件</button>
+        <button id="btn3">测试事件坐标</button>
+        <a href="http://www.baidu.com" id="test4">百度一下</a>
+    </div>
+
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script>
+        /* 
+            区别mouseover和mouseenter
+                mouseover：在移入子元素时也会触发，对应mouseout
+                mouseenter：只有移入当前元素时才触发，对应mouseleave
+                            hover()使用的就是mouseenter()和mouseleave()
+                当两者都没有子元素，无区别
+        */
+
+        //1.给外部div1绑定点击监听
+            /*
+            $('.div1').click(function(){
+                console.log('click div1')
+            })
+            */
+            $('.div1').on('click',function(){
+                console.log('click div1')
+            })
+        
+        //2.给内部div2绑定鼠标移入和移出的事件监听
+            /*
+             $('.div2')
+                .mouseenter(function(){
+                    console.log('进入')
+                })
+                .mouseleave(function(){
+                    console.log('离开')
+                }) 
+            */
+          /*  $('.div2')
+                .on('mouseenter',function() {
+                    console.log('进入2')
+                })
+                .on('mouseleave',function() {
+                    console.log('离开2')
+                }) */
+            $('.div2').hover(function(){
+                console.log('进入3')
+            },function(){
+                console.log('离开3')
+            })
+              
+        //3.点击btn1解除内部div上的所有事件监听
+            $('#btn1').click(function(){
+                $('.div2').off()
+            })
+        //4.点击btn2解除内部div2上的mouseenter事件
+        $('#btn1').click(function(){
+                $('.div2').off('mouseenter')
+            })
+
+        //5.点击btn3得到事件坐标
+        /*
+            event.clientX  event.clientY  相对于视口的左上角
+            event.pageX  event.pageY  相对于页面左上角
+            event.offsetX  event.offsetY  相对于事件元素左上角
+        */
+        $('#btn3').click(function(){   
+            console.log(event.offsetX,event.offsetY)  //原点为事件元素左上角
+            console.log(event.clientX,event.clientY)    //原点为窗口左上角
+            console.log(event.pageX,event.pageY)    //原点为页面左上角
+        })
+
+        //6.点击内部div2区域，外部点击监听不响应
+        $('.div2').click(function(event){
+            console.log('click div2')
+            //停止事件冒泡：event.stopPropagation()
+            event.stopPropagation()
+        })
+
+        //7.点击链接，如果当前时间是偶数不跳转
+            $('#test4').click(function(event){
+                if(Date.now()%2==0){
+                    //阻止事件默认行为
+                    event.preventDefault()
+                }
+            })
+    </script>
+</body>
+</html>

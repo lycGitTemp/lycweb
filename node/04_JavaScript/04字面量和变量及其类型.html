@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            字面量，都是一些不可改变的值  如：1 2 3 4 5
+                字面量都是可以直接使用，但是我们一般都不会直接使用字面量
+            变量， 变量可以用来保存字面量，而且变量的值是可以任意改变的
+                开发一般的都是通过变量来保存有一个字面量
+        */
+
+        // 声明变量：JS中使用var关键字来声明一个变量，声明一次就行
+        //     为变量赋值
+        // var a=123;
+        // a='hello';
+        // console.log(a);
+
+        /*
+        JS中一共有六种类型
+            -String 字符型
+            -Number 数值
+            -Boolean 布尔值
+            -Null 空值
+            -Undefined 为定义
+            -Object 对象
+        */
+        
+        //字符型
+        /* 
+            var str="hello"; 单引号和双引号都可以，但不能混用，也不能嵌套如双引号里放双引号，但可以双引号里放单引号
+            console.log(str);
+        */
+        
+        //数值
+        /*
+            包括整数和浮点数
+        
+        var a=123;      数字型
+        var b="123";    字符型
+
+        可以使用一个运算符 typeof 来检查一个变量的类型
+            语法：typeof 变量
+        console.log(a); 
+        console.log(b);
+        console.log(typeof a);
+        console.log(typeof b);
+
+        JS可以表示数字的最大值
+            Number.MAX_VALUE;如果使用Number表示的数字超过最大值，则会返回一个Infinity，表示正无穷
+         -Infinity 表示负无穷
+        Number.Min_VALUE 不是表示最小值，而是表示大于0的最小值
+        NaN 是一个特殊的数字，表示Not A Number,使用typeof检索还是Number类型
+        
+        */
+
+        //布尔型
+        /*
+            Boolean 布尔值  true 和 false 
+
+            var a=true;
+            console.log(a);
+            console.log(typeof a);
+        */
+
+        //空值
+        /*
+            只有一个空值 null 专门用来表示一个为空的对象
+            var a=null；
+            console.log(a);
+            console.log(typeof a);
+        */
+
+        //未定义
+        /*
+            声明一个变量时，不给变量赋值时，它的值就是undefined
+
+            var a;
+            var a=undefined;
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识jQuery</title>
+    <script>
+        //使用原生DOM
+            window.onload=function(){
+            var btn1=document.getElementById('btn1')
+            btn1.onclick=function(){
+                var username=document.getElementById('username').Value;
+                alert(username);
+         }       
+        }
+    </script>
+    <!-- 使用jquery实现 -->
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        //绑定文件加载完成监听
+        $(function(){
+            $('#btn2').click(function(){
+                var username=$('#username').val();
+                alert(username);
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 点击确定按钮，提示输入的值 -->
+    用户名：<input type="text" id="username">
+    <button id="btn1">确定(原生版)</button>
+    <button id="btn2">确定(jQuery版)</button>
+</body>
+</html>

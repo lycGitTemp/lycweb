@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="box">div1(class=box)</div>
+    <div id="div2" class="box">div2(class=box)</div>
+    <div id="div3">div3</div>
+    <div class="box">span(class=box)</div>
+
+    <br>
+    <ul>
+        <li>AAAA</li>
+        <li title="hello">BBBB</li>
+        <li class="box">CCCC</li>
+        <li title="hello">DDDD</li>
+
+    </ul>
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script>
+        //选择id为div1的元素
+        $('#div1').css('background','red');
+        //选择所有的div元素
+        $('div').css('background','red')
+        //选择所有class属性为box的元素
+        $('.box').css('background','red')
+        //选择所有的div和span元素  (并列)
+        $('div,span').css('background','red')
+        //选择所有的class属性为box的div元素  （交集）
+        $('.boxdiv').css('background','red')
+
+    </script>
+</body>
+</html>

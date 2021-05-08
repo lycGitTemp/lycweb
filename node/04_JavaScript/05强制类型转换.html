@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            将其他的数据类型转换为String
+                1.调用被转换数据类型的toString()方法,该方法不会影响到原变量,但是null和undefined没有toString方法
+                    var a=123/true;
+                    a=a.toString();
+
+                2.调用String()函数
+                    var a=123/null/undefined;
+                    a=String(a);
+        */
+
+        /*
+            将其他数据类型转换成Number
+                1.使用Number()函数
+                    字符串-->数字：如果为纯数字字符串，则直接转换；
+                                  如果有非数字内容，会转换成NaN；
+                                  如果全为空格，会转换成0；
+                    布尔-->数字：true为1，false为0；
+                    NUll-->数字：为0;
+                    未定义-->数字：为NaN
+                    var a="123"/boolean/null/true/false/undefined;
+                    a=Number(a);
+                2.这种方式专用于支付串转数字
+                    -parseInt() 将一个字符串里的有效整数读取,也可以小数取整
+                        var a="123a456px";    
+                        parseInt(a);  =123
+                    -parseFloat() 将一个字符串里的有效小数读取
+                        var a="123.456.78px"  
+                        parseFloat(a);  =123.456
+        */  
+
+        /*
+            将其他数据类型转换成Boolean
+                使用Boolean()函数
+                    数字-->布尔：除了0和NaN，其他都是true；
+                    字符串-->布尔：除了空串，其他的都是true；
+                    null、undefined-->布尔： 都是false；
+                var a=123;  true
+                var a=-123;  true
+                var a=infinity;  true
+                var a=NaN;  false
+                a=Boolean(a);
+        
+        
+        
+        */
+        
+        /*
+            JS中，需要表示16进制的数字，需要0x开头
+                需要表示8进制数字，需要0开头
+                需要表示2进制数字，需要0b开头,但需要浏览器支持
+                
+                a=0x10;
+                a=070;
+                a=0b10;
+
+                var a=070;
+                可以在里面传递第二个参数，来指定数字的进制
+                a=parseInt(a,10)
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

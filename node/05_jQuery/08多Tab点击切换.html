@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #tab li {
+            float: left;
+            list-style: none;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+        }
+        #container{
+            position: relative;
+        }
+        #content1,#content2,#content3{
+            width: 300px;
+            height: 100px;
+            padding: 40px;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+        }
+        #tab1,#content1{
+            background-color: yellow;
+        }
+        #tab2,#content2{
+            background-color: pink;
+        }
+        #tab3,#content3{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>多Tab点击切换</h2>
+    <ul id="tab">
+        <li id="tab1" value="1">10元套餐</li>
+        <li id="tab2" value="2">30元套餐</li>
+        <li id="tab3" value="3">50元套餐</li>
+    </ul>
+    <div id="container">
+        <div id="content1">10元套餐详情</div>
+        <div id="content2" style="display:none">30元套餐详情</div>
+        <div id="content3" style="display:none">50元套餐详情</div>
+    </div>
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script>
+        /*var $contents=$('#container>div')
+        //先给三个li监听
+        $('#tab>li').click(function(){   //隐式遍历
+            //隐藏所有的div
+            $contents.css('display','none')
+            //显示对应内容的div
+                //得到当前点击的li的下标
+                var index=$(this).index()
+                //在找到对应的div，并显示
+                $contents[index].style.display='block'   //效率比下面的高，原生
+                // $($contents[index].css('display','block')
+        })
+        */
+       var $contents=$('#container>div')
+       var currIndex=0  //当前显示div的下标
+       $('#tab>li').click(function(){   //隐式遍历
+            //隐藏当前显示的div
+            $contents[currIndex].style.display='none'
+            //显示对应内容的div
+                //得到当前点击的li的下标
+                var index=$(this).index()
+                //在找到对应的div，并显示
+                $contents[index].style.display='block'   //效率比下面的高，原生
+                // $($contents[index].css('display','block')
+                //更新下标
+                currIndex=index
+        })
+
+    </script>
+</body>
+</html>

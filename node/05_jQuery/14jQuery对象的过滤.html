@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>AAA</li>
+        <li title="hello" class="box2">BBB</li>
+        <li class="box">CCC</li>
+        <li title="hello">DDD</li>
+        <li title="two"><span>EEE</span></li>
+    </ul>
+    <li>fff</li>
+    <li>FFF</li>
+    <br>
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script>
+        var $lis=$('ul>li')
+        //ul下li标签的第一个
+            // $lis.first().css('background','red')
+            // $lis[0].style.background='red'
+        //ul下li标签的第二个
+            // $lis.eq(1).css('background','red')
+        //ul下li标签的最后一个 
+            // $lis.last().css('background','red')
+        //ul下li标签下title属性为hello
+            //$lis.filter('[title=hello]').css('background','red')
+        //ul下li标签下title属性不为hello
+            // $lis.not('[title=hello]').css('background','red')
+             //$lis.filter('[title!=hello]').css('background','red')
+        //ul下li标签中有span子标签的
+            //$lis.has('span').css('background','red')
+    </script>
+</body>
+</html>

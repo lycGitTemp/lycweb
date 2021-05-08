@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color: greenyellow;">江西</p>
+    <p style="color: red;">南昌</p>
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script>
+        // 1.得到第一个p标签的颜色
+            // console.log($('p:first').css('color'))
+
+        // 2.设置所有p标签的文本颜色为pink
+            // $('p').css('color','pink')
+
+        //3.设置第二个p标签的字体颜色为blue，背景yellow，宽300px，高30px
+            $('p:eq(1)').css({
+                color:'blue',
+                background:'yellow',
+                width:300,
+                height:30
+            })
+    </script>
+</body>
+</html>

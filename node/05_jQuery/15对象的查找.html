@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="box" title="one">class为box的div1</div>
+    <div id="div2" class="box" >class为box的div1</div>
+    <div id="div3" >div3</div>
+    <span class="box">class为box的span</span>
+    <br>
+    <div>
+        <ul>
+            <span>span文本1</span>
+            <li>AAA</li>
+            <li title="hello" class="box2">BBB</li>
+            <li class="box" id="cc">CCC</li>
+            <li title="hello">DDD</li>
+            <li title="two"><span>span文本2</span></li>
+            <span>span文本3</span>
+        </ul>
+        <span>span文本4</span>
+        <br>
+        <li>eee</li>
+        <li>EEE</li>
+        <br>    
+    </div>
+    <script src="jq/jquery-3.5.1.js"></script>
+    <script>
+        var $ul=$('ul')
+        //ul标签的第二个span子标签
+            // $ul.children('span:eq(1)').css('background','red')
+
+        //ul标签的第二个span的后代标签
+            // $ul.find('span:eq(1)').css('background','red')
+        //ul标签的父标签
+            // $ul.parent().css('background','red')
+
+        //id为cc的li标签的前面的所有的li标签
+            var $li=$('#cc')
+            // $li.prevAll('li').css('background','red')
+        //id为cc的li标签的所有兄弟li标签
+            $li.siblings('li').css('background','red')
+    </script>
+</body>
+</html>
