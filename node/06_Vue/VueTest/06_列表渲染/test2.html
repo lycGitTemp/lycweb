@@ -46,11 +46,15 @@
         const {searchName, persons, orderType} = this
         let arr = [...persons]
         // 过滤数组
-        if(searchName.trim()) {
+        // trim() 方法用于删除字符串的头尾空白符，空白符包括：空格、制表符 tab、换行符等其他空白符等。
+        if(searchName.trim()) { 
+          // filter 方法用来迭代一个数组，并且按给出的条件过滤出符合的元素，回调函数返回 true 的项会保留在数组中，返回 false 的项会被过滤出数组。
+          // 用于字串在大字符串的下标，如果没有得到-1
           arr = persons.filter(p => p.name.indexOf(searchName)!==-1)
         }
         // 排序
         if(orderType) {
+          // sort() 方法用于对数组的元素进行排序。  
           arr.sort(function (p1, p2) {
             if(orderType===1) { // 降序
               return p2.age-p1.age

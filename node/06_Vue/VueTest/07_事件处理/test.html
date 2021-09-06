@@ -25,15 +25,32 @@
   <h2>1. 绑定监听</h2>
   <button @click="test1">test1</button>
   <button @click="test2('abc')">test2</button>
+  <!-- 加了$event这个特别参数之后可以获得自己添加的参数和本身 -->
   <button @click="test3('abcd', $event)">test3</button>
 
   <h2>2. 事件修饰符</h2>
+
+  <!-- 
+    链接点击之后会默认跳转，这时候如果不想跳转就可以阻止事件的默认行为
+    原生：event.preventDefault()
+  -->
   <a href="http://www.baidu.com" @click.prevent="test4">百度一下</a>
+
+
   <div style="width: 200px;height: 200px;background: red" @click="test5">
+    <!--
+       内部嵌套了一个div，绑定监听之后，点击内部会显示inner和out，这时候我们要停止事件冒泡
+        原生：event.stopPropagation()
+    -->
     <div style="width: 100px;height: 100px;background: blue" @click.stop="test6"></div>
   </div>
 
   <h2>3. 按键修饰符</h2>
+  <!-- 
+    enter的keycode为13 
+    可以是表示按enter抬起时显示内容
+    并不是所有的按键都有名称，例如a没有，space有
+  -->
   <input type="text" @keyup.13="test7">
   <input type="text" @keyup.enter="test7">
 
@@ -48,7 +65,7 @@
     },
     methods: {
       test1(event) {
-        alert(event.target.innerHTML)
+        alert(event.target.innerHTML) 
       },
       test2 (msg) {
         alert(msg)

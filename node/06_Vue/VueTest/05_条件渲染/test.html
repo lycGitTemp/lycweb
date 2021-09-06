@@ -11,7 +11,9 @@
   v-else
   v-show
 2. 比较v-if与v-show
-  如果需要频繁切换 v-show 较好
+    如果需要频繁切换 v-show 较好
+    v-show通过样式隐藏，也就是display：none，还在缓存里，
+    v-if直接移除
 -->
 
 <div id="demo">
@@ -22,6 +24,7 @@
   <p v-show="ok">求婚成功</p>
   <p v-show="!ok">求婚失败</p>
 
+  <!-- 先得到ok的值在取反，最后赋值给ok -->
   <button @click="ok=!ok">切换</button>
 </div>
 

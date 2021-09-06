@@ -29,6 +29,8 @@
   <h2>测试: v-for 遍历对象</h2>
 
   <ul>
+    <li v-for="(item, key) in persons[1]" :key="key">{{item}}={{key}}</li>
+    <br><br>
     <li v-for="(item, key) in persons[1]" :key="key">{{key}}={{item}}</li>
   </ul>
 
@@ -36,6 +38,8 @@
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  // vue本身只是监视了persons的改变，没有监视数组内部数据的改变，但这与deleteP相矛盾
+  // 所以只是Vue重写了数组中一系列改变数组内部数据的方法（先调用原生，在更新界面）--->数组内部改变，界面自动变化
   new Vue({
     el: '#demo',
     data: {
@@ -48,19 +52,26 @@
     },
 
     methods: {
+      // 删除persons中指定index的p
       deleteP (index) {
-        this.persons.splice(index, 1) // 调用了不是原生数组的splice(), 而是一个变异(重写)方法
+        // splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+          // index：必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+          // howmany：必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+        this.persons.splice(index, 1) 
+        // 调用了不是原生数组的splice(), 而是一个变异(重写)方法
               // 1. 调用原生的数组的对应方法
               // 2. 更新界面
       },
 
       updateP (index, newP) {
         console.log('updateP', index, newP)
-        // this.persons[index] = newP  // vue根本就不知道
+        // this.persons[index] = newP  // 并没有改变person本身，数组内部发生变化，但并没有调用变异方法，vue不会更新界面
         this.persons.splice(index, 1, newP)
         // this.persons = []
       },
 
+
+      // 这也是数组中重写的变异方法 
       addP (newP) {
         this.persons.push(newP)
       }

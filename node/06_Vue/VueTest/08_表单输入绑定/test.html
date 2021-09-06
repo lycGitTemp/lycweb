@@ -7,10 +7,10 @@
 <body>
 <!--
 1. 使用v-model(双向数据绑定)自动收集数据
-  text/textarea
-  checkbox
-  radio
-  select
+  text/textarea 文本框
+  checkbox  多选
+  radio 单选
+  select 选择框
 -->
 <div id="demo">
   <form action="/xxx" @submit.prevent="handleSubmit">
@@ -37,7 +37,7 @@
     <span>城市: </span>
     <select v-model="cityId">
       <option value="">未选择</option>
-      <option :value="city.id" v-for="(city, index) in allCitys" :key="city.id">{{city.name}}</option>
+      <option :value="city.id" v-for="(city, index) in allCitys" :key="index">{{city.name}}</option>
     </select><br>
     <span>介绍: </span>
     <textarea rows="10" v-model="info"></textarea><br><br>
@@ -53,7 +53,8 @@
     data: {
       username: '',
       pwd: '',
-      sex: '男',
+      // 默认性别男
+      sex: '男', 
       likes: ['foot'],
       allCitys: [{id: 1, name: 'BJ'}, {id: 2, name: 'SS'}, {id: 3, name: 'SZ'}],
       cityId: '2',
